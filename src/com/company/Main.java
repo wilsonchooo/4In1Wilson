@@ -11,7 +11,7 @@ public class Main {
         String[] Stringarr  = z.randomStringArr(100);
         int[] intarr = z.randomIntArr(100);
         Double [] doublearr = z.randomDoubleArr(100);
-        
+
 
 
         System.out.println(Arrays.toString(arr));
