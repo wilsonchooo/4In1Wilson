@@ -23,7 +23,7 @@ public class InPlaceSorts {
         }
     }
 
-    public  void selectionsort (double list2[])
+    public  void selectionSort (double list2[])
     {
 
         for (int i = 0; i < list2.length-1; i++)
@@ -44,7 +44,7 @@ public class InPlaceSorts {
     public  void bubbleSort(String[] list3) {
         for (int i = 0; i < list3.length; i++) {
             for (int j = i + 1; j < list3.length; j++) {
-                if (Integer.parseInt(list3[i]) > Integer.parseInt(list3[j])) {
+                if ((list3[i].compareTo(list3[j])) > 0) {
                     swapString(list3,i,j);
                 }
             }
@@ -60,33 +60,8 @@ public class InPlaceSorts {
         return arr;
     }
 
-    public Double[] randomDoubleArr(int count)
-    {
-        Double[] arr =new Double[count];
-        for (int i=0;i<arr.length;i++)
-        {
-            arr[i]=(Math.random()*10000);
-        }
-        return arr;
-    }
 
-    public String[] randomStringArr(int count)
-    {
-        int[] arr =new int[count];
-        String[] Stringarr = new String[count];
 
-        for (int i=0;i<arr.length;i++)
-        {
-            arr[i]=((int)(Math.random()*10000));
-        }
-
-        for (int x=0;x<arr.length;x++)
-        {
-            Stringarr[x] = Integer.toString(arr[x]);
-        }
-        return Stringarr;
-
-    }
 
     public double [] IntToDouble (int [] arr)
     {
@@ -127,5 +102,23 @@ public class InPlaceSorts {
         arr[j] = temp;
     }
 
+    public String [] randomStringArr(int num, int length)
+    {
+        String [] arr = new String[num];
+        while (num>0)
+        {
+            int i =0;
+            String s = "";
+            while (i<length)
+            {
+                char c = (char)((Math.random()*26)+97);
+                s=s+c;
+                i++;
+            }
+            num--;
+            arr[num]=s;
+        }
+        return arr;
+    }
 
 }
