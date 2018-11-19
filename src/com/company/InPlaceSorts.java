@@ -11,19 +11,19 @@ public class InPlaceSorts {
     {
         for (int i=1;i<list1.length;i++)
         {
-            int key = list1[i];
+            int current = list1[i];
             int x = i-1;
 
-            while (x>=0 && list1[x]>key) // moves all of the numbers before the key right to make space.
+            while (x>=0 && list1[x]>current) // moves all of the numbers before the key right to make space.
             {
                 list1[x+1] = list1[x];
                 x=x-1;
             }
-            list1[x+1] = key;
+            list1[x+1] = current;
         }
     }
 
-    public  void selection (int list2[])
+    public  void selectionsort (double list2[])
     {
 
         for (int i = 0; i < list2.length-1; i++)
@@ -34,7 +34,7 @@ public class InPlaceSorts {
                 if (list2[x] < list2[min])
                     min = x;
 
-            swap (list2,min,i);
+            swapDouble(list2,min,i);
         }
 
 
@@ -44,9 +44,8 @@ public class InPlaceSorts {
     public  void bubbleSort(String[] list3) {
         for (int i = 0; i < list3.length; i++) {
             for (int j = i + 1; j < list3.length; j++) {
-                if (list3[i].equals(list3[j])) {
+                if (Integer.parseInt(list3[i]) > Integer.parseInt(list3[j])) {
                     swapString(list3,i,j);
-
                 }
             }
         }
@@ -89,6 +88,26 @@ public class InPlaceSorts {
 
     }
 
+    public double [] IntToDouble (int [] arr)
+    {
+        double[] doublearr = new double[arr.length];
+        for (int x=0;x<arr.length;x++)
+        {
+            double temp = (arr[x]);
+            doublearr[x] = temp;
+        }
+        return doublearr;
+    }
+
+    public String [] IntToString (int [] arr)
+    {
+        String[] stringarr = new String[arr.length];
+        for (int x=0;x<arr.length;x++)
+        {
+            stringarr[x] = Integer.toString(arr[x]);
+        }
+        return stringarr;
+    }
 
     public static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
@@ -98,6 +117,12 @@ public class InPlaceSorts {
 
     public static void swapString(String[] arr, int i, int j) {
         String temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    public static void swapDouble(double[] arr, int i, int j) {
+        Double temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
