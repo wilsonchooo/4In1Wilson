@@ -44,12 +44,23 @@ public class InPlaceSorts {
     public  void bubbleSort(String[] list3) {
         for (int i = 0; i < list3.length; i++) {
             for (int j = i + 1; j < list3.length; j++) {
-                if ((list3[i].compareTo(list3[j])) > 0) {
+                if (list3[i].compareTo(list3[j]) > 0) {
                     swapString(list3,i,j);
                 }
             }
         }
     }
+
+    public  void bubbleSortNumbers(String[] list3) {
+        for (int i = 0; i < list3.length; i++) {
+            for (int j = i + 1; j < list3.length; j++) {
+                if (Integer.parseInt(list3[i])>Integer.parseInt(list3[j])) {
+                    swapString(list3,i,j);
+                }
+            }
+        }
+    }
+
     public int[] randomIntArr(int count)
     {
         int[] arr =new int[count];

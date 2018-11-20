@@ -42,15 +42,16 @@ public class Main {
 
 
         long time3 = System.nanoTime();
-        z.bubbleSort(Stringarr);
+        z.bubbleSortNumbers(Stringarr);
         time3 = System.nanoTime() - time3;
         System.out.println("Time Taken - Bubble Sort: "+ time3);
 
-        long time4 = System.nanoTime();
 
+        long time4 = System.nanoTime();
         z.bubbleSort(StringarrLetters);
         time4 = System.nanoTime() - time4;
         System.out.println("Time Taken - Bubble Sort with letters: "+ time4);
+
         System.out.println();
 
 
