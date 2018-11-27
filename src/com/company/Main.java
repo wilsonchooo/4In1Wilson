@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.Arrays;
 
+
 public class Main {
 
     public static void main(String[] args) {
@@ -10,14 +11,26 @@ public class Main {
 
 
         int[] intarr = z.randomIntArr(10);
+        int[] intarr2= intarr;
         double[] Doublearr = z.IntToDouble(intarr);
         String[]  Stringarr = z.IntToString(intarr);
 
         String [] StringarrLetters = z.randomStringArr(10,10);
 
 
+
+
+
+
+
+
+
         System.out.print("int - Insertion");
         System.out.println(Arrays.toString(intarr));
+
+        System.out.print("Int - Quick");
+        System.out.println(Arrays.toString(intarr2));
+
         System.out.print("Double - Selection");
 
         System.out.println(Arrays.toString(Doublearr));
@@ -34,6 +47,11 @@ public class Main {
         z.insertionSort(intarr);
         time = System.nanoTime() - time;
         System.out.println("Time Taken - Insertion Sort: "+ time);
+
+        long time5 = System.nanoTime();
+        z.quickSort(intarr2,0,intarr2.length-1);
+        time5 = System.nanoTime() - time5;
+        System.out.println("Time Taken - Quick Sort: "+ time5);
 
         long time2 = System.nanoTime();
         z.selectionSort(Doublearr);
@@ -56,6 +74,7 @@ public class Main {
 
 
         System.out.println(Arrays.toString(intarr));
+        System.out.println(Arrays.toString(intarr2));
         System.out.println(Arrays.toString(Doublearr));
         System.out.println(Arrays.toString(Stringarr));
         System.out.println(Arrays.toString(StringarrLetters));
